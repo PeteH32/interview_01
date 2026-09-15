@@ -10,8 +10,8 @@ For full architecture, see this design document
 ## Prerequisites
 
 - Java 21
-- Gradle 8.14 or newer
-- Docker Compose
+- Docker
+- IntelliJ - if you want to run backend server in debugger (optional)
 
 NOTE: The following will be run inside docker containers and do not need separately installed.
 
