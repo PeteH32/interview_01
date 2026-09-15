@@ -16,11 +16,12 @@ Local development implementation of the architecture in `Design-Docs/Arch-Design
    docker compose up --build
    ```
 
-2. In a second terminal, run the backend from IntelliJ or with Gradle:
+2. Backend Server - In a second terminal, run the backend from IntelliJ or with Gradle:
 
    ```sh
-   gradle bootRun
+   ./gradlew bootRun
    ```
+NOTE: You can also run the Backend Server in IntelliJ debugger. If so, skip above step.
 
 3. Open http://localhost:3000.
 
@@ -29,6 +30,6 @@ nginx sends `/product` requests to the backend at `host.docker.internal:8080`. T
 ## Verify
 
 ```sh
-gradle test
+./gradlew test
 ```
 
