@@ -13,14 +13,14 @@ For full architecture, see this design document
 - Gradle 8.14 or newer
 - Docker Compose
 
-NOTE: The following will be run inside docker containers, and do not need separately installed.
+NOTE: The following will be run inside docker containers and do not need separately installed.
 
 - MySQL
 - nginx
 
 ## Database Setup
 
-This will start both MySQL and the nginx-served UI:
+This will start both MySQL and the UI (nginx):
 
    ```sh
    docker compose up --build
@@ -40,13 +40,16 @@ If running the Backend server with Gradle, then in a second terminal, run this:
 
 If running the Backend server with IntelliJ debugger, do so now.
 
+NOTE: DB initializations & migrations are run each time the Backend server 
+starts up (uses Liquibase). 
+
 ## Start frontend
 
 The frontend/nginx server was started above, under "Database Setup".
 
 To access the UI in a web browser, go to:
 
-- http://localhost:3000.
+- http://localhost:3000
 
 ## Verify
 
@@ -61,9 +64,9 @@ Deviations from preferred stack:
 
 - Database - I used MySQL instead of Postgres because it has been several years since I last used Postgres.
 
-# How you built it
+## How I built it
 
-I created a design document (*.md file), then had Codex AI generate the project.
+I created a design document (*.md file), then had Codex AI read it and generate the project.
 
 - I created only one file - this design document:
 
