@@ -1,6 +1,11 @@
-# Product List
+## Architecture Overview
 
-Local development implementation of the architecture in `Design-Docs/Arch-Design_01_v02.md`.
+Simplified architecture:
+
+![Design-Docs/Arch-Diagram_01.jpg](./Design-Docs/Arch-Diagram_01.jpg)
+
+For full architecture, see this design document
+- [./Design-Docs/Arch-Design_01_v02.md](./Design-Docs/Arch-Design_01_v02.md)
 
 ## Prerequisites
 
@@ -12,15 +17,6 @@ NOTE: The following will be run inside docker containers, and do not need separa
 
 - MySQL
 - nginx
-
-## Architecture Overview
-
-Simplified architecture:
-
-![Design-Docs/Arch-Diagram_01.jpg](./Design-Docs/Arch-Diagram_01.jpg)
-
-For full architecture, see this design document
-- [./Design-Docs/Arch-Design_01_v02.md](./Design-Docs/Arch-Design_01_v02.md)
 
 ## Database Setup
 
@@ -34,7 +30,7 @@ starts up (uses Liquibase). See next step.
 
 ## Start backend
 
-You can run the Backend serever either with Gradle or within IntelliJ debugger.
+You can run the Backend server either with Gradle or within IntelliJ debugger.
 
 If running the Backend server with Gradle, then in a second terminal, run this:
 
@@ -54,13 +50,14 @@ To access the UI in a web browser, go to:
 
 ## Verify
 
--- In web browser, open http://localhost:3000/
--- Add a few products. Verify they show up.
--- Refresh the page, verify list is same.
+- In web browser, open http://localhost:3000/
+- Add a few products. Verify they show up.
+- Refresh the page, verify list is same.
+- Add a product with exact name as already existing one. It should allow this.
 
 ## Notes
 
-Devaiations from preferred stack:
+Deviations from preferred stack:
 
 - Database - I used MySQL instead of Postgres because it has been several years since I last used Postgres.
 
@@ -73,7 +70,7 @@ I created a design document (*.md file), then had Codex AI generate the project.
   - [./Design-Docs/Arch-Design_01_v02.md](./Design-Docs/Arch-Design_01_v02.md)
 
 - Then I asked Codex to read the file and let me know if it had any questions. It had a half dozen very good questions.
-- I answered those questions and had it update the above file to include this new information.
+I answered those questions and had it update the above file to include this new information.
 - Then I told Codex to create the code and project files. Codex took about 5-6 minutes.
 - I followed the generated README and verified:
   - Everything was running: MySQL DB server, Nginx frontend, and Backend server,  
