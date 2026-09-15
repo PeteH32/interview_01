@@ -9,14 +9,13 @@ For full architecture, see this design document
 
 ## Prerequisites
 
+You will need these installed:
+
 - Java 21
 - Docker
 - IntelliJ - if you want to run backend server in debugger (optional)
 
-NOTE: The following will be run inside docker containers and do not need separately installed.
-
-- MySQL
-- nginx
+NOTE: The following will be run inside docker containers, and therefore do not need separately installed: MySQL, and nginx
 
 ## Database Setup
 
