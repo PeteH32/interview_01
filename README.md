@@ -8,6 +8,16 @@ Local development implementation of the architecture in `Design-Docs/Arch-Design
 - Gradle 8.14 or newer
 - Docker Compose
 
+
+## Architecture Overview
+
+Simplified architecture:
+
+![Design-Docs/Arch-Diagram_01.jpg](./Design-Docs/Arch-Diagram_01.jpg)
+
+For full architecture, see this design document
+- [./Design-Docs/Arch-Design_01_v02.md](./Design-Docs/Arch-Design_01_v02.md)
+
 ## Run locally
 
 1. Start MySQL and the nginx-served UI:
