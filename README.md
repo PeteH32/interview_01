@@ -79,6 +79,15 @@ I answered those questions and had it update the above file to include this new 
   - The UI let me list and create new products. I queried the DB directly to very this.
   - I also made sure Backend could run in IntelliJ debugger fine, with breakpoint, etc.
 
+## To shut it all down
+
+- Shutdown Backend server first.
+  - If running via Gradle "bootRun", then hit CTL-C
+  - If running in IntelliJ, hit stop
+- Shutdown all docker containers - Frontend server, and MySQL server
+  - If docker compose is still running in Terminal window's foreground (it's not running detached), then hit "d" to detach and get command prompt.
+  - `docker compose down`
+  - `docker ps -a`  # verifies docker containers are shutdown
 
 ## Run tests
 
