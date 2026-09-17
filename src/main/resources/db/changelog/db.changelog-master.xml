@@ -12,5 +12,37 @@
             <column name="name" type="VARCHAR(250)"/>
         </createTable>
     </changeSet>
-</databaseChangeLog>
 
+    <changeSet id="002-create-orders-tables" author="product-list">
+        <createTable tableName="orders">
+            <column name="order_id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="order_date" type="DATE"/>
+            <column name="order_value" type="DECIMAL(19,2)"/>
+        </createTable>
+
+        <createTable tableName="order_details">
+            <column name="order_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="item_price" type="DECIMAL(19,2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="item_quantity" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey tableName="order_details" columnNames="order_id, product_id"
+                constraintName="pk_order_details"/>
+        <addForeignKeyConstraint baseTableName="order_details" baseColumnNames="order_id"
+                constraintName="fk_order_details_order" referencedTableName="orders" referencedColumnNames="order_id"/>
+        <addForeignKeyConstraint baseTableName="order_details" baseColumnNames="product_id"
+                constraintName="fk_order_details_product" referencedTableName="product" referencedColumnNames="id"/>
+        <sql>ALTER TABLE order_details ADD CONSTRAINT chk_order_details_positive_quantity CHECK (item_quantity &gt; 0)</sql>
+    </changeSet>
+</databaseChangeLog>
